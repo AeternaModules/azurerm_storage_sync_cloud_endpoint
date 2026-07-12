@@ -1,3 +1,7 @@
+output "storage_sync_cloud_endpoints_id" {
+  description = "Map of id values across all storage_sync_cloud_endpoints, keyed the same as var.storage_sync_cloud_endpoints"
+  value       = { for k, v in azurerm_storage_sync_cloud_endpoint.storage_sync_cloud_endpoints : k => v.id }
+}
 output "storage_sync_cloud_endpoints_file_share_name" {
   description = "Map of file_share_name values across all storage_sync_cloud_endpoints, keyed the same as var.storage_sync_cloud_endpoints"
   value       = { for k, v in azurerm_storage_sync_cloud_endpoint.storage_sync_cloud_endpoints : k => v.file_share_name }
